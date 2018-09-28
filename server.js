@@ -62,7 +62,7 @@ app.get("/tr", (req, res) => {
   res.render("index", { name: "John", title: "John's Page" });
 });
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is up and listening on port ${port}.`);
 });
