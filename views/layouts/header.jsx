@@ -8,6 +8,10 @@ const navRoutes = [
   {
     path: "/about",
     name: "About"
+  },
+  {
+    path: "/projects",
+    name: "Projects"
   }
 ];
 

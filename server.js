@@ -27,18 +27,15 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   res.render("maintenance", {
     pageTitle: "Maintenance Page",
-    currentYear: currentYear()
   });
 });
 */
 app.use(express.static(__dirname + "/public"));
 app.use("/wiki", wiki);
 
-const currentYear = () => new Date().getFullYear();
 app.get("/", (req, res) => {
   res.render("index", {
     pageTitle: "Home Page",
-    currentYear: currentYear(),
     welcomeMessage: "Welcome to my website"
   });
 });
@@ -49,8 +46,13 @@ app.get("/json", (req, res) => {
 
 app.get("/about", (req, res) => {
   res.render("about", {
-    pageTitle: "About Page",
-    currentYear: currentYear()
+    pageTitle: "About Page"
+  });
+});
+
+app.get("/projects", (req, res) => {
+  res.render("projects", {
+    pageTitle: "Projects Page"
   });
 });
 
